@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DataApp</string>
+    <string name="baseCurrency">GBP: 1:00</string>
+</resources>
