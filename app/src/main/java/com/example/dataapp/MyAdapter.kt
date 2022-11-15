@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dataapp.databinding.RowItemsBinding
 
 
 class MyAdapter (val context: Context, val userList: List<MyDataItem>): RecyclerView.Adapter<MyAdapter.ViewHolder>() {
-    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: RowItemsBinding): RecyclerView.ViewHolder(itemView.root) {
         var userId: TextView
         var title: TextView
 
@@ -20,7 +21,7 @@ class MyAdapter (val context: Context, val userList: List<MyDataItem>): Recycler
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        var itemView = LayoutInflater.from(context).inflate(R.layout.row_items, parent, false)
+        var itemView = RowItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(itemView)
     }
 
